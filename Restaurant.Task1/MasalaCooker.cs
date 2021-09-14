@@ -15,26 +15,9 @@ namespace AbstartFactory
 
         public void CookMasala(Country country)
         {
-            IMenuMaker menuMaker;
+            IMenuFactory menuMaker = new BasicMenuFactory();
 
-            if (country == Country.India)
-            {
-                menuMaker = new IndianMenuMaker();
-            }
-            else if (country == Country.Ukraine)
-            {
-                menuMaker = new UkraineMenuMaker();
-            }
-            else if (country == Country.England)
-            {
-                menuMaker = new EnglandMenuMaker();
-            }
-            else
-            {
-                throw new ApplicationException("Invalid country");
-            }
-
-            menuMaker.CreateMenu().CookMasala(cooker);
+            menuMaker.CreateMenu(country).CookMasala(cooker);
         }
     }
 }

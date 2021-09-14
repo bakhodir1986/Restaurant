@@ -6,9 +6,9 @@ using TemplateMethod.Task1.Menu;
 
 namespace Restaurant.Task1.Factory
 {
-    public interface IMenuMaker
+    public interface IMenuFactory
     {
-        public RestourantMenu CreateMenu();
+        public RestourantMenu CreateMenu(Country country);
 
     }
 }
